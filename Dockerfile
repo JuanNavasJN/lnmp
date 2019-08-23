@@ -14,7 +14,9 @@ RUN curl -sS https://getcomposer.org/installer | php && \
     chmod +x /usr/local/bin/composer
     
 RUN rm /var/www/html/index.html
-RUN apt-get install -y nginx && service nginx start
+RUN apt-get install -y nginx
+
+CMD ["service", "nginx", "start"]
 
 EXPOSE 80 3306 8000
 
