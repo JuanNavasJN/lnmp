@@ -2,6 +2,7 @@ FROM mysql:5.7
 MAINTAINER Juan Navas <yo@juannavas.xyz>
 
 RUN apt-get update && apt-get install -y systemd && apt install -y git unzip curl nano
+RUN rm /var/www/html/index.html
 RUN apt-get install -y nginx
 
 RUN apt install -y apt-transport-https lsb-release ca-certificates wget && \
