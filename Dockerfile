@@ -16,8 +16,6 @@ RUN curl -sS https://getcomposer.org/installer | php && \
 RUN rm /var/www/html/index.html
 RUN apt-get install -y nginx
 
-CMD ["service", "nginx", "start"]
-
 EXPOSE 80 3306 8000
 
 #docker build -t juannavasjn/lnmp .
