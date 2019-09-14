@@ -16,9 +16,12 @@ RUN curl -sS https://getcomposer.org/installer | php && \
 RUN rm /var/www/html/index.html
 RUN apt-get install -y nginx
 
+RUN chown -R www-data:www-data /var/www/html/* && \
+    chmod -R 755 /var/www/html/*
+
 EXPOSE 80 3306 8000
 
-ENTRYPOINT service nginx start && bash
+ENTRYPOINT service nginx start && service php7.2-fpm start && bash
 
 #docker build -t juannavasjn/lnmp .
 #docker run -d -t --name lnmp-jn -p 8080:80 -p 8081:8000 -e MYSQL_ROOT_PASSWORD=secret juannavasjn/lnmp
