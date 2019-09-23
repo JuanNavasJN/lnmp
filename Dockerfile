@@ -1,4 +1,4 @@
-FROM mysql:5.7
+FROM mysql:8.0.17
 MAINTAINER Juan Navas <yo@juannavas.xyz>
 
 RUN apt-get update && apt-get install -y systemd && apt install -y git unzip curl nano
